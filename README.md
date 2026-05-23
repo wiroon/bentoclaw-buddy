@@ -2,7 +2,6 @@
 
 **Hardware**: KIT_PSE84_AI (PSoC Edge E84 + AIROC CYW55500 DualBand combo radio)
 **Brand**: **BENTO : : Make Anything.**
-**Companion docs**: <https://ide.tesaiot.com/>
 
 This repository hosts the **flashable firmware images** for BentoClaw — a MicroPython runtime on PSoC Edge E84 that bridges hardware sensors + radios to a desktop companion app over BLE.
 
@@ -33,10 +32,7 @@ Every release attaches the following assets:
 | File | Purpose |
 |---|---|
 | `bento-buddy-vX.Y.Z-KIT_PSE84_AI.hex` | **Single-shot programmable image** — flash this one file via KitProg3 / OpenOCD to bring up all three cores at once |
-| `bento-buddy-vX.Y.Z-cm33_s_signed.hex` | Secure CM33 (root of trust) — for advanced users who flash per-core |
-| `bento-buddy-vX.Y.Z-cm33_ns.hex` | Non-secure CM33 (runs MicroPython, Wi-Fi, BLE host) |
-| `bento-buddy-vX.Y.Z-cm55.hex` | CM55 coprocessor (display + page UI) |
-| `SHA256SUMS.txt` | Integrity hashes for all `.hex` files |
+| `SHA256SUMS.txt` | Integrity hashes for the `.hex` image |
 
 The version tag (`vX.Y.Z`) corresponds to `BENTO_BUDDY_FW_VERSION` reported by `bento.info` over BLE NUS and by the firmware boot banner.
 
@@ -120,13 +116,11 @@ Tags follow `vMAJOR.MINOR.PATCH` matching `BENTO_BUDDY_FW_VERSION` in the firmwa
 ## Companion software
 
 - **Bento Desktop Buddy** — the host-side BLE bridge + LLM chat panel (macOS / Linux / Windows). Use it to scan, pair, send NUS commands, and chat to the board through your preferred LLM provider (BYOK).
-- **BENTO IDE** — Blockly-based visual programming environment with examples library, deployable to the same firmware. See <https://ide.tesaiot.com/>.
 
 ---
 
 ## Support & links
 
-- Project landing: <https://ide.tesaiot.com/>
 - Hardware vendor docs: [Infineon PSoC Edge E84 product page](https://www.infineon.com/cms/en/product/microcontroller/32-bit-psoc-arm-cortex-microcontroller/psoc-edge-e8-series/)
 - Combo radio: [AIROC CYW55500](https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-wi-fi-plus-bluetooth-combos/wi-fi-6-6e/cyw55500/)
 - For issues with these binary releases, open a GitHub issue on this repository
