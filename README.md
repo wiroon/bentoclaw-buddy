@@ -31,33 +31,10 @@ Every release attaches the following assets:
 
 | File | Purpose |
 |---|---|
-| `bento-buddy-vX.Y.Z-KIT_PSE84_AI.hex` | **Single-shot programmable image** — flash this one file via KitProg3 / OpenOCD to bring up all three cores at once |
+| `bento-buddy-vX.Y.Z-KIT_PSE84_AI.hex` | **Single-shot programmable image** — flash this one file via the **Bento Desktop Buddy** application to bring up all three cores at once |
 | `SHA256SUMS.txt` | Integrity hashes for the `.hex` image |
 
 The version tag (`vX.Y.Z`) corresponds to `BENTO_BUDDY_FW_VERSION` reported by `bento.info` over BLE NUS and by the firmware boot banner.
-
----
-
-## Quick start — flash with KitProg3
-
-You'll need:
-- A KIT_PSE84_AI board with **KitProg3 CMSIS-DAP** mode active (default)
-- [OpenOCD with Infineon PSoC patches](https://github.com/Infineon/openocd) (or ModusToolbox's bundled OpenOCD)
-
-```bash
-# Verify integrity first
-shasum -a 256 -c SHA256SUMS.txt
-
-# Flash the all-in-one image
-openocd \
-  -s "$MTB_TOOLS/openocd/scripts" \
-  -f interface/kitprog3.cfg \
-  -c "transport select swd" \
-  -f target/psoc_edge.cfg \
-  -c "init; reset init; flash write_image erase bento-buddy-v1.1.0-KIT_PSE84_AI.hex; reset run; exit"
-```
-
-Or use [ModusToolbox Programmer](https://www.infineon.com/cms/en/design-support/tools/sdk/modustoolbox-software/) — open the `.hex` and click **Program**.
 
 ---
 
