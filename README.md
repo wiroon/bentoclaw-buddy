@@ -5,7 +5,7 @@
 
 This repository hosts the **flashable firmware images** for BentoClaw — a MicroPython runtime on PSoC Edge E84 that bridges hardware sensors + radios to a desktop companion app over BLE.
 
-> ✨ This is a binary-release-only repository. Source distributions are governed separately by the BENTO open-source program — track that work under the parent organization.
+> ✨ This is a binary-release-only repository.
 
 ---
 
